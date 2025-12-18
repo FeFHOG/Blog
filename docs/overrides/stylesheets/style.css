@@ -1,0 +1,177 @@
+/* -------------------------------------------------- */
+/* 1. 强制变量层透明 (解决所有默认背景问题) */
+/* -------------------------------------------------- */
+:root, [data-md-color-scheme="slate"] {
+    --md-default-bg-color: #000000 !important;
+    /* 核心：把所有导航相关的背景变量全部强制设为透明 */
+    --md-header-bg-color: rgba(0, 0, 0, 0) !important; 
+    --md-tabs-bg-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* -------------------------------------------------- */
+/* 2. 为 Header 和 Tabs 统一建立玻璃外壳 */
+/* -------------------------------------------------- */
+.md-header, 
+.md-tabs {
+    /* 这里才是真正给颜色和模糊的地方 */
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: none !important;
+    /* 给个微弱的边框线，增加质感 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* -------------------------------------------------- */
+/* 3. 强制剥离 Tabs 内部所有嵌套层的背景 (钉子户清理) */
+/* -------------------------------------------------- */
+
+/* 强制外壳透明 */
+nav.md-tabs {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 强制列表容器透明 */
+.md-tabs__list {
+    background-color: transparent !important;
+}
+
+/* 强制列表项透明 */
+.md-tabs__item {
+    background-color: transparent !important;
+}
+
+/* 关键：Material 在滚动到顶部时会给 Tabs 加一个特殊的层，必须干掉 */
+.md-tabs[data-md-state="sticky"] {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* -------------------------------------------------- */
+/* 4. 其他修正 */
+/* -------------------------------------------------- */
+
+/* 侧边栏必须是纯黑，不能有透明度，否则会和主内容重叠 */
+.md-sidebar {
+    background-color: #000000 !important;
+}
+
+/* 隐藏页脚 */
+.md-copyright {
+    display: none !important;
+}/* -------------------------------------------------- */
+/* 1. 强制变量层透明 (解决所有默认背景问题) */
+/* -------------------------------------------------- */
+:root, [data-md-color-scheme="slate"] {
+    --md-default-bg-color: #000000 !important;
+    /* 核心：把所有导航相关的背景变量全部强制设为透明 */
+    --md-header-bg-color: rgba(0, 0, 0, 0) !important; 
+    --md-tabs-bg-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* -------------------------------------------------- */
+/* 2. 为 Header 和 Tabs 统一建立玻璃外壳 */
+/* -------------------------------------------------- */
+.md-header, 
+.md-tabs {
+    /* 这里才是真正给颜色和模糊的地方 */
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: none !important;
+    /* 给个微弱的边框线，增加质感 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* -------------------------------------------------- */
+/* 3. 强制剥离 Tabs 内部所有嵌套层的背景 (钉子户清理) */
+/* -------------------------------------------------- */
+
+/* 强制外壳透明 */
+nav.md-tabs {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 强制列表容器透明 */
+.md-tabs__list {
+    background-color: transparent !important;
+}
+
+/* 强制列表项透明 */
+.md-tabs__item {
+    background-color: transparent !important;
+}
+
+/* 关键：Material 在滚动到顶部时会给 Tabs 加一个特殊的层，必须干掉 */
+.md-tabs[data-md-state="sticky"] {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* -------------------------------------------------- */
+/* 4. 其他修正 */
+/* -------------------------------------------------- */
+
+/* 侧边栏必须是纯黑，不能有透明度，否则会和主内容重叠 */
+.md-sidebar {
+    background-color: #000000 !important;
+}
+
+/* 隐藏页脚 */
+.md-copyright {
+    display: none !important;
+}/* -------------------------------------------------- */
+/* 1. 强制变量层透明 (解决所有默认背景问题) */
+/* -------------------------------------------------- */
+:root, [data-md-color-scheme="slate"] {
+    --md-default-bg-color: #000000 !important;
+    /* 核心：把所有导航相关的背景变量全部强制设为透明 */
+    --md-header-bg-color: rgba(0, 0, 0, 0) !important; 
+    --md-tabs-bg-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* -------------------------------------------------- */
+/* 2. 为 Header 和 Tabs 统一建立玻璃外壳 */
+/* -------------------------------------------------- */
+.md-header, 
+.md-tabs {
+    /* 这里才是真正给颜色和模糊的地方 */
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: none !important;
+    /* 给个微弱的边框线，增加质感 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* -------------------------------------------------- */
+/* 3. 强制剥离 Tabs 内部所有嵌套层的背景 (钉子户清理) */
+/* -------------------------------------------------- */
+
+/* 强制外壳透明 */
+nav.md-tabs {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 强制列表容器透明 */
+.md-tabs__list {
+    background-color: transparent !important;
+}
+
+/* 强制列表项透明 */
+.md-tabs__item {
+    background-color: transparent !important;
+}
+
+/* 关键：Material 在滚动到顶部时会给 Tabs 加一个特殊的层，必须干掉 */
+.md-tabs[data-md-state="sticky"] {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* -------------------------------------------------- */
+/* 4. 其他修正 */
+/* -------------------------------------------------- */
+
+/* 侧边栏必须是纯黑，不能有透明度，否则会和主内容重叠 */
+.md-sidebar {
+    background-color: #000000 !important;
+}
+

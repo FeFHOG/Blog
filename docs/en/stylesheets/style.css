@@ -1,0 +1,66 @@
+/* -------------------------------------------------- */
+/* 1. 全局：强制深色模式下的基础背景为纯黑 */
+/* -------------------------------------------------- */
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #000000 !important;
+    /* 强制变量透明，切断所有自动填色的来源 */
+    --md-header-bg-color: transparent !important;
+    --md-tabs-bg-color: transparent !important;
+}
+
+/* -------------------------------------------------- */
+/* 2. 核心：给整个 Header 大容器施加毛玻璃 */
+/* -------------------------------------------------- */
+header.md-header {
+    /* 所有的半透明黑色和模糊效果，只写在这里 */
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    
+    background-image: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* -------------------------------------------------- */
+/* 3. 镂空：把里面所有可能带颜色的子层全部杀掉 (重点) */
+/* -------------------------------------------------- */
+
+/* 1. 掏空标题行 */
+.md-header__inner {
+    background-color: transparent !important;
+}
+
+/* 2. 掏空标签行 (就是你说的“财经”那一行) */
+nav.md-tabs, 
+.md-tabs,
+.md-tabs__list,
+.md-tabs__item,
+.md-tabs__link,
+.md-grid {
+    background-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 3. 针对“首页”这种激活状态的特殊背景进行清理 */
+.md-tabs__item--active .md-tabs__link {
+    background-color: transparent !important;
+    font-weight: bold;
+}
+
+/* -------------------------------------------------- */
+/* 4. 其他视觉修正 */
+/* -------------------------------------------------- */
+
+/* 去掉底部的署名 */
+.md-copyright {
+    display: none !important;
+}
+
+/* 确保侧边栏在黑色背景下是实心的，不透明 */
+.md-sidebar {
+    background-color: #000000 !important;
+    /* 确保侧边栏在滚动时位于 header 之下，且顶部有足够间距 */
+    margin-top: 0px; 
+}

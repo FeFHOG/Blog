@@ -1,0 +1,42 @@
+site_name: QuantumRose Blog
+docs_dir: "docs/en"  # 指向你的内容文件夹
+site_dir: "site"
+site_description: a personal blog by QuantumRose
+site_url: https://fefhog.top/
+site_author: QuantumRose
+
+
+theme:
+  name: material
+  custom_dir: docs/overrides # 指向你的自定义模板和样式
+  language: zh
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  palette:
+    - scheme: slate # 强制开启暗黑模式
+      primary: black
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+nav:
+  - index: index.md
+  - finance: finance/index.md
+  - tech:
+      - ml: tech/ml/index.md
+      - XCPC: tech/XCPC/index.md
+      - dev: tech/dev/index.md
+      - Iot: tech/Iot/index.md
+  - logs: logs/index.md
+  - memo: memo/index.md
+  - about: about/index.md
+
+extra_css:
+  - stylesheets/style.css # 确保 docs/en/stylesheets/style.css 存在
+
+plugins:
+  - search
