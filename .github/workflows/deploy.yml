@@ -2,7 +2,7 @@ name: publish site
 on:
   push:
     branches:
-      - main  # 当你向 main 分支推送代码时触发
+      - main
 
 jobs:
   deploy:
@@ -16,9 +16,11 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install mkdocs-material 
-          # 如果你用了其他插件，在这里加上 pip install 插件名
+          pip install mkdocs-material
+          # 常用插件一次性全装上，防止因为缺插件报错
+          pip install mkdocs-static-i18n mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin
 
       - name: Build and Deploy
         run: |
+          # 添加 --force 参数强制覆盖
           mkdocs gh-deploy --force
