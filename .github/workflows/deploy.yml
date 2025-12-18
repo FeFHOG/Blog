@@ -1,0 +1,24 @@
+name: publish site
+on:
+  push:
+    branches:
+      - main  # 当你向 main 分支推送代码时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material 
+          # 如果你用了其他插件，在这里加上 pip install 插件名
+
+      - name: Build and Deploy
+        run: |
+          mkdocs gh-deploy --force
