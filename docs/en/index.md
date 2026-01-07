@@ -4,7 +4,7 @@ description: Discover Ultralytics YOLO - the latest in real-time object detectio
 keywords: Ultralytics, YOLO, YOLO11, object detection, image segmentation, deep learning, computer vision, AI, machine learning, documentation, tutorial
 ---
 
-![](assets\coverart.svg)
+![](assets/coverart.svg)
 
 # Quantum Rose
 
